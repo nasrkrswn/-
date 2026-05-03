@@ -17,11 +17,11 @@ import {
   Users,
   X
 } from "lucide-react";
+import { BrandLogo } from "@/components/brand-logo";
 import { useAuth } from "@/components/auth-provider";
 import { SetupNotice } from "@/components/setup-notice";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/components/ui/cn";
-import { brand } from "@/lib/brand";
 import { roleLabels } from "@/lib/labels";
 import type { UserRole } from "@/lib/types";
 
@@ -135,9 +135,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const sidebar = (
     <aside className="flex h-full flex-col border-l border-white/10 bg-ink-900 text-white">
       <div className="flex h-16 items-center justify-between border-b border-white/10 px-5">
-        <Link href="/app/dashboard" className="grid gap-0.5">
-          <span className="text-lg font-bold text-white">{brand.name}</span>
-          <span className="text-xs font-medium text-emerald-200">نظام الحضور والانصراف</span>
+        <Link href="/app/dashboard" className="min-w-0">
+          <BrandLogo tone="light" size="sm" />
         </Link>
         <button
           className="rounded-lg p-2 text-slate-300 hover:bg-white/10 hover:text-white lg:hidden"
@@ -200,8 +199,8 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         >
           <Menu className="h-6 w-6" aria-hidden />
         </button>
-        <Link href="/app/dashboard" className="text-base font-bold text-ink-900">
-          {brand.name}
+        <Link href="/app/dashboard" className="min-w-0">
+          <BrandLogo size="sm" showSubtitle={false} />
         </Link>
       </header>
 

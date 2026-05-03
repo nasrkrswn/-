@@ -3,7 +3,6 @@
 import { FormEvent, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
-  Building2,
   CheckCircle2,
   Clock3,
   LocateFixed,
@@ -16,6 +15,7 @@ import {
   UserPlus,
   UserRound,
 } from "lucide-react";
+import { BrandLogo } from "@/components/brand-logo";
 import { useAuth } from "@/components/auth-provider";
 import { SetupNotice } from "@/components/setup-notice";
 import { Button } from "@/components/ui/button";
@@ -23,7 +23,6 @@ import { EmptyState } from "@/components/ui/empty-state";
 import { Field, Input, Select, Textarea } from "@/components/ui/field";
 import { AttendanceBadge, RequestBadge } from "@/components/ui/status-badge";
 import { StatCard } from "@/components/ui/stat-card";
-import { brand } from "@/lib/brand";
 import { appConfig } from "@/lib/config";
 import { formatDate, formatDateTime, formatTime, getTodayRange } from "@/lib/dates";
 import { findNearestLocation, readBrowserPosition, type GeoPoint, type LocationMatch } from "@/lib/geo";
@@ -487,20 +486,7 @@ export default function EmployeesPortalPage() {
       <main className="min-h-screen bg-ink-50">
         <section className="mx-auto grid min-h-screen w-full max-w-6xl items-center gap-8 px-4 py-8 lg:grid-cols-[1fr_430px]">
           <div className="grid gap-6">
-            <div className="flex items-center gap-3">
-              {brand.logoUrl ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={brand.logoUrl} alt="" className="h-12 w-12 rounded-lg bg-white object-contain p-1 shadow-soft" />
-              ) : (
-                <div className="grid h-12 w-12 place-items-center rounded-lg bg-brand-600 text-white shadow-soft">
-                  <Building2 className="h-7 w-7" aria-hidden />
-                </div>
-              )}
-              <div>
-                <p className="text-2xl font-bold text-ink-900">{brand.name}</p>
-                <p className="text-sm text-ink-500">بوابة مستقلة للموظفين</p>
-              </div>
-            </div>
+            <BrandLogo size="lg" subtitle="بوابة مستقلة للموظفين" />
 
             <div className="max-w-2xl">
               <p className="text-sm font-semibold text-brand-700">صفحة الموظفين</p>
@@ -632,15 +618,7 @@ export default function EmployeesPortalPage() {
     <main className="min-h-screen bg-ink-50">
       <header className="border-b border-ink-200 bg-white">
         <div className="mx-auto flex w-full max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4">
-          <div className="flex items-center gap-3">
-            <div className="grid h-11 w-11 place-items-center rounded-lg bg-brand-600 text-white">
-              <Building2 className="h-6 w-6" aria-hidden />
-            </div>
-            <div>
-              <p className="text-lg font-bold text-ink-900">{brand.name}</p>
-              <p className="text-sm text-ink-500">صفحة الموظفين</p>
-            </div>
-          </div>
+          <BrandLogo size="md" subtitle="صفحة الموظفين" />
 
           <div className="flex flex-wrap items-center gap-3">
             <Button variant="ghost" onClick={handleSignOut}>

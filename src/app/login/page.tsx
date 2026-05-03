@@ -2,12 +2,12 @@
 
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Building2, LockKeyhole, Mail } from "lucide-react";
+import { LockKeyhole, Mail } from "lucide-react";
+import { BrandLogo } from "@/components/brand-logo";
 import { useAuth } from "@/components/auth-provider";
 import { SetupNotice } from "@/components/setup-notice";
 import { Button } from "@/components/ui/button";
 import { Field, Input } from "@/components/ui/field";
-import { brand } from "@/lib/brand";
 import { getBrowserSupabase } from "@/lib/supabase";
 import type { Profile, UserRole } from "@/lib/types";
 
@@ -114,20 +114,7 @@ export default function LoginPage() {
   return (
     <main className="grid min-h-screen bg-ink-50 lg:grid-cols-[1fr_560px]">
       <section className="hidden min-h-screen bg-ink-900 p-10 text-white lg:flex lg:flex-col lg:justify-between">
-        <div className="flex items-center gap-3">
-          {brand.logoUrl ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={brand.logoUrl} alt="" className="h-12 w-12 rounded-lg bg-white object-contain p-1" />
-          ) : (
-            <div className="grid h-12 w-12 place-items-center rounded-lg bg-brand-500">
-              <Building2 className="h-7 w-7" aria-hidden />
-            </div>
-          )}
-          <div>
-            <p className="text-xl font-bold">{brand.name}</p>
-            <p className="text-sm text-brand-100">إدارة حضور الشركة بثقة ووضوح</p>
-          </div>
-        </div>
+        <BrandLogo tone="light" size="lg" subtitle="إدارة حضور الشركة بثقة ووضوح" />
         <div className="max-w-xl">
           <h1 className="text-4xl font-bold leading-tight">دخول منفصل للإدارة والموظفين بصلاحيات واضحة.</h1>
           <p className="mt-5 text-base leading-8 text-ink-100">
