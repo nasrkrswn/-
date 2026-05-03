@@ -1,9 +1,19 @@
+function normalizeCompanyName(value: string | undefined) {
+  const companyName = value?.trim();
+
+  if (!companyName || companyName.includes("Ø") || companyName.includes("Ù")) {
+    return "حضورك";
+  }
+
+  return companyName;
+}
+
 export const appConfig = {
   supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL ?? "",
   supabasePublishableKey:
     process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "",
   facebookPixelId: process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID ?? "",
-  companyName: process.env.NEXT_PUBLIC_COMPANY_NAME ?? "حضورك",
+  companyName: normalizeCompanyName(process.env.NEXT_PUBLIC_COMPANY_NAME),
   appLanguage: process.env.NEXT_PUBLIC_APP_LANGUAGE ?? "ar",
   brandPrimary: process.env.NEXT_PUBLIC_BRAND_PRIMARY ?? "#0f766e",
   companyLogoUrl: process.env.NEXT_PUBLIC_COMPANY_LOGO_URL ?? "",
