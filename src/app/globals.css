@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #f5f7fb;
+  --brand-primary: #0f766e;
+  --brand-primary-hover: #115e59;
+  --brand-primary-active: #134e4a;
+  --brand-primary-soft: #ccfbf1;
+  --app-bg: #f5f7fb;
+  --app-bg-soft: #eef5f8;
+  --surface: #ffffff;
+  --surface-muted: #f8fbfd;
+  --line-soft: #d7e2ee;
+  --sidebar-bg: #10202d;
+  --sidebar-bg-soft: #172b3a;
+  --sidebar-text: #d8e6ef;
+  --sidebar-muted: #91a6b5;
+  --success-soft: #e9fbf2;
+  --warning-soft: #fff7e6;
+  --danger-soft: #fff1f3;
+  --info-soft: #ecf7ff;
+  --luxury-gold: #d97706;
+  --luxury-gold-light: #f59e0b;
+  --luxury-platinum: #e2e8f0;
+  --neutral-dark: #0f172a;
+  --neutral-medium: #334155;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    linear-gradient(180deg, #f8fbfd 0%, var(--app-bg) 38%, #eef5f8 100%);
+  color: #0f172a;
+  font-family: 'Cairo', 'Segoe UI', system-ui, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Arabic Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cairo', system-ui, sans-serif;
+  font-weight: 600;
+  color: #0f172a;
+  letter-spacing: 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  font-family: 'Cairo', system-ui, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+::selection {
+  background: #ccfbf1;
+  color: #0f172a;
+}
+
+/* Application Surfaces */
+.bg-ink-50 {
+  background-color: var(--app-bg) !important;
+}
+
+.bg-ink-100 {
+  background-color: #e8eef5 !important;
+}
+
+.bg-ink-900 {
+  background-color: var(--sidebar-bg) !important;
+}
+
+.border-ink-100 {
+  border-color: #e5edf5 !important;
+}
+
+.border-ink-200 {
+  border-color: var(--line-soft) !important;
+}
+
+.text-ink-500 {
+  color: #607286 !important;
+}
+
+.text-ink-600 {
+  color: #43566a !important;
+}
+
+.text-ink-700 {
+  color: #2e4054 !important;
+}
+
+.text-ink-900 {
+  color: #101827 !important;
+}
+
+.shadow-soft {
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07) !important;
+}
+
+main .bg-white,
+section.bg-white,
+form.bg-white,
+aside.bg-white,
+div.bg-white {
+  background-color: var(--surface) !important;
+}
+
+main .border-ink-200.bg-white,
+main .rounded-lg.bg-white {
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+}
+
+table {
+  background: var(--surface);
+}
+
+thead.bg-ink-50,
+thead {
+  background: #f0f6fb !important;
+  color: #52657a !important;
+}
+
+tbody tr {
+  transition: background-color 0.18s ease;
+}
+
+tbody tr:hover {
+  background: #f8fbfd;
+}
+
+/* Brand Color Utilities */
+.bg-brand-50 {
+  background-color: color-mix(in srgb, var(--brand-primary, #0f766e) 12%, white) !important;
+}
+
+.bg-brand-100 {
+  background-color: color-mix(in srgb, var(--brand-primary, #0f766e) 20%, white) !important;
+}
+
+.bg-brand-500,
+.bg-brand-600 {
+  background-color: var(--brand-primary, #0f766e) !important;
+  box-shadow: 0 10px 18px color-mix(in srgb, var(--brand-primary, #0f766e) 18%, transparent);
+}
+
+.hover\:bg-brand-700:hover {
+  background-color: var(--brand-primary-hover, #115e59) !important;
+}
+
+.text-brand-600,
+.text-brand-700 {
+  color: var(--brand-primary, #0f766e) !important;
+}
+
+.hover\:text-brand-600:hover {
+  color: var(--brand-primary-hover, #115e59) !important;
+}
+
+.border-brand-600,
+.focus\:border-brand-600:focus {
+  border-color: var(--brand-primary, #0f766e) !important;
+}
+
+.focus\:ring-brand-100:focus {
+  --tw-ring-color: color-mix(in srgb, var(--brand-primary, #0f766e) 18%, white) !important;
+}
+
+.focus-visible\:ring-brand-600:focus-visible {
+  --tw-ring-color: var(--brand-primary, #0f766e) !important;
+}
+
+/* Luxury Design Elements */
+.luxury-card {
+  background: #ffffff;
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+  transition: all 0.3s ease;
+}
+
+.luxury-card:hover {
+  border-color: color-mix(in srgb, var(--brand-primary, #0f766e) 45%, var(--line-soft));
+  box-shadow: 0 20px 42px rgba(15, 23, 42, 0.1), 0 8px 18px rgba(15, 118, 110, 0.08);
+}
+
+.luxury-button {
+  background: #0f766e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-family: 'Cairo', system-ui, sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.luxury-button:hover {
+  background: #115e59;
+  box-shadow: 0 20px 30px rgba(15, 118, 110, 0.16);
+}
+
+.luxury-button:active {
+  background: #134e4a;
+}
+
+/* Separator with Gold Accent */
+.luxury-divider {
+  height: 2px;
+  background: linear-gradient(to right, transparent, #0f766e, transparent);
+  margin: 2rem 0;
+}
+
+/* Minimalist Border Accent */
+.luxury-accent-border {
+  border-right: 3px solid #0f766e;
+  padding-right: 1rem;
+  margin-right: 1rem;
+}
